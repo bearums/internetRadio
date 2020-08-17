@@ -1,0 +1,17 @@
+#to find station URLs use 
+# http://fmstream.org
+st1=http://fm4shoutcast.sf.apa.at:8000/
+n1 = F M vier
+st2=http://bbcmedia.ic.llnwd.net/stream/bbcmedia_6music_mf_p
+n2= b b c radio 6
+st3=http://media-ice.musicradio.com:80/ClassicFMMP3
+n3 = classic f m 
+st4=http://sc8.radiocaroline.net:8040/
+n4 = radio caroline 
+st5=http://cdn.peoplemesh.net:9000/livestream.mp3
+n5 = detektor f m 
+st6=http://live-mp3-128.kexp.org
+n6 = k e x p
+st7= =http://stream-relay-geo.ntslive.net/stream
+n7 =N T S
+speak_names = False

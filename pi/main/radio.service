@@ -1,0 +1,14 @@
+[Unit]
+Description=radio
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python -u main.py
+WorkingDirectory=/home/pi/main
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
