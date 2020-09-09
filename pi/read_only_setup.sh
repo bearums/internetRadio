@@ -103,14 +103,13 @@ if [ 0 -eq $( grep -c ',ro' /etc/fstab ) ]; then
 fi
 
 echo "* Modifying bashrc"
-cat "set_bash_prompt(){" >> ~/.bashrc
-cat "    fs_mode=$(mount | sed -n -e "s/^\/dev\/.* on \/ .*(\(r[w|o]\).*/\1/p")" >> ~/.bashrc
-cat"    PS1='\[\033[01;32m\]\u@\h${fs_mode:+($fs_mode)}\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" >> ~/.bashrc
-cat "}" >> ~/.bashrc 
-cat "alias ro='sudo mount -o remount,ro / ; sudo mount -o remount,ro /boot'" >> ~/.bashrc
-cat "alias rw='sudo mount -o remount,rw / ; sudo mount -o remount,rw /boot'" >> ~/.bashrc
-
-cat "PROMPT_COMMAND=set_bash_prompt" >> ~/.bashrc
+echo "set_bash_prompt(){" >> ~/.bashrc
+echo "    fs_mode=$(mount | sed -n -e "s/^\/dev\/.* on \/ .*(\(r[w|o]\).*/\1/p")" >> ~/.bashrc
+echo "    PS1='\[\033[01;32m\]\u@\h${fs_mode:+($fs_mode)}\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" >> ~/.bashrc
+echo "}" >> ~/.bashrc 
+echo "alias ro='sudo mount -o remount,ro / ; sudo mount -o remount,ro /boot'" >> ~/.bashrc
+echo "alias rw='sudo mount -o remount,rw / ; sudo mount -o remount,rw /boot'" >> ~/.bashrc
+echo "PROMPT_COMMAND=set_bash_prompt" >> ~/.bashrc
 
 #if [ 0 -eq $( grep -c 'mount -o remount' /etc/bash.bashrc ) ]; then
 #  cat ./bash.bashrc.addon >> /etc/bash.bashrc
